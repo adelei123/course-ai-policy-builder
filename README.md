@@ -14,7 +14,7 @@ Any edit you commit to `index.html` goes live within about a minute.
 | Path | What it is |
 | --- | --- |
 | `index.html` | The tool: questions, branching logic, policy language |
-| `support.js`, `_ds/` | Runtime and stylesheet `index.html` needs. Keep them next to it. |
+| `support.js`, `organic-styles.css` | Runtime and stylesheet `index.html` needs. Keep them next to it. |
 | `policy-builder-offline.html` | Single-file copy that works offline or opened from disk. It does not update when `index.html` changes. |
 | `source/question-progression-reference.dc.html` | Visual reference of every step and branch |
 | `source/wcag-audit-report.dc.html` | WCAG 2.2 Level A/AA audit report (Round 3), which reads `audit-r3.json` |
@@ -30,7 +30,7 @@ Open `index.html` in any text editor, or click the pencil icon on github.com.
 - **Generated policy language:** the JavaScript in the lower half. Shortened syllabus sentences are in constants starting with `SYL_`.
 - **Branching:** logic near `STEPS` and `visible(`.
 
-Change only the text inside quotes. Keep quote marks, commas and `{{ }}` placeholders intact.
+Change only the text inside quotes. Keep quote marks, commas and the double-curly-brace placeholders intact.
 
 ## Accessibility status
 All WCAG 2.2 Level A and AA web criteria are supported except 4.1.3 Status Messages, which still needs a screen-reader test (NVDA/VoiceOver). Accessibility of the Word and PDF output has not been verified.
