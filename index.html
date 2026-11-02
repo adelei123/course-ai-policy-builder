@@ -195,15 +195,15 @@ h1:focus-visible,h2:focus-visible{outline:3px solid var(--color-accent);outline-
   <div style="margin: 0; font-size: 16px; line-height: 1.6; color: var(--ink-2); max-width: 70ch; text-wrap: pretty"><div>UO instructors are expected to clearly explain what uses of generative AI are allowed and not allowed in their courses. The approach you choose should reflect your course learning objectives and any guidance from your department or unit.</div><div><br></div><div>Choose the starting point that best fits your course. You’ll have an opportunity to add details and set specific expectations next.</div></div>
   <div role="radiogroup" aria-label="How students may use GenAI in your course" onKeyDown="{{ on.radioKeys }}" style="display:flex;flex-direction:column;gap:11px">
     <button data-opt="" role="radio" aria-checked="{{ sel.stance_prohibited }}" onClick="{{ act.stance_prohibited }}" style="display: flex; flex-direction: column; gap: 7px; align-items: flex-start; text-align: left; padding: 18px 21px; border-radius: 24px; border: 1px solid var(--edge); cursor: pointer; font-family: var(--font-body); color: var(--ink); background:#fff">
-      <span style="font-family:var(--font-heading);font-weight:800;font-size:20px">GenAI use is not allowed</span>
+      <span style="font-family:var(--font-heading);font-weight:500;font-size:20px">GenAI use is <strong style="font-weight:800">not allowed</strong></span>
       <span style="font-size:15px;line-height:1.55;color:var(--ink-2)">Students may not use generative AI to complete coursework or assignments. You will not need to define additional categories of permitted use.</span>
     </button>
     <button data-opt="" role="radio" aria-checked="{{ sel.stance_limited }}" onClick="{{ act.stance_limited }}" style="display: flex; flex-direction: column; gap: 7px; align-items: flex-start; text-align: left; padding: 18px 21px; border-radius: 24px; border: 1px solid var(--edge); cursor: pointer; font-family: var(--font-body); color: var(--ink); background:#fff">
-      <span style="font-family:var(--font-heading);font-weight:800;font-size:20px">GenAI use is allowed with specific limitations</span>
+      <span style="font-family:var(--font-heading);font-weight:500;font-size:20px">GenAI use is <strong style="font-weight:800">allowed with <em>specific</em> limitations</strong></span>
       <span style="font-size:15px;line-height:1.55;color:var(--ink-2)">Students may use generative AI for certain purposes, tasks, or assignments. Next, you’ll identify what is allowed, what is not allowed, and when permission or a specific tool may be required.</span>
     </button>
     <button data-opt="" role="radio" aria-checked="{{ sel.stance_unrestricted }}" onClick="{{ act.stance_unrestricted }}" style="display: flex; flex-direction: column; gap: 7px; align-items: flex-start; text-align: left; padding: 18px 21px; border-radius: 24px; border: 1px solid var(--edge); cursor: pointer; font-family: var(--font-body); color: var(--ink); background:#fff">
-      <span style="font-family:var(--font-heading);font-weight:800;font-size:20px">GenAI use is generally allowed</span>
+      <span style="font-family:var(--font-heading);font-weight:500;font-size:20px">GenAI use is <strong style="font-weight:800"><em>generally</em> allowed</strong></span>
       <span style="font-size:15px;line-height:1.55;color:var(--ink-2)">Students may use generative AI throughout the course unless an assignment states otherwise. Next, you’ll decide whether AI-generated content may be included in submitted work and set any acknowledgment or documentation expectations.</span>
     </button>
     <button data-opt="" aria-expanded="{{ sel.compare }}" aria-controls="compare-panel" onClick="{{ act.compare }}" style="display: flex; flex-direction: column; gap: 5px; align-items: flex-start; text-align: left; padding: 17px 20px; border-radius: 24px; border: 1px dashed var(--edge); cursor: pointer; font-family: var(--font-body); color: var(--ink); min-height: 44px; background:#fff">
@@ -216,7 +216,7 @@ h1:focus-visible,h2:focus-visible{outline:3px solid var(--color-accent);outline-
     <h3 style="margin:0;font-family:var(--font-heading);font-weight:800;font-size:20px;color:var(--color-accent)">Compare the three approaches</h3>
     <sc-for list="{{ compareRows }}" as="r" hint-placeholder-count="3">
       <div style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px; border-radius: 22px; background-color: var(--note-bg)">
-        <span style="font-family:var(--font-heading);font-weight:800;font-size:17px;color:var(--color-accent)">{{ r.name }}</span>
+        <span style="font-family:var(--font-heading);font-weight:500;font-size:17px;color:var(--color-accent)">GenAI use is <strong style="font-weight:800">{{ r.b1 }}<em>{{ r.em }}</em>{{ r.b2 }}</strong></span>
         <span style="font-size: 15px; line-height: 1.55; color: var(--ink-strong)"><strong>May fit when:</strong> {{ r.fits }}</span>
         <span style="font-size: 15px; line-height: 1.55; color: var(--ink-strong)"><strong>What you’ll decide next:</strong> {{ r.asks }}</span>
       </div>
@@ -310,7 +310,7 @@ h1:focus-visible,h2:focus-visible{outline:3px solid var(--color-accent);outline-
   <div role="group" aria-label="Tools and materials — choose any that apply" style="display:flex;flex-direction:column;gap:11px">
     <button data-opt="" aria-pressed="{{ sel.tools_protected }}" onClick="{{ act.tools_protected }}" style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;text-align:left;padding:17px 20px;border-radius:24px;border:1px solid var(--edge);background:#fff;cursor:pointer;font-family:var(--font-body);color:var(--ink)">
       <span style="font-family:var(--font-heading);font-weight:700;font-size:18px">Use only UO-provided or approved tools</span>
-      <span style="font-size:15px;line-height:1.5;color:var(--ink-2)">Students use Microsoft Copilot with Data Protection while signed in with their UO account, or another platform specifically approved for the course or program. A personal account with an outside vendor is not required.</span>
+      <span style="font-size:15px;line-height:1.5;color:var(--ink-2)">Students use Microsoft Copilot Chat with Enterprise Data Protection while signed in with their UO account, or another platform specifically approved for the course or program. A personal account with an outside vendor is not required.</span>
     </button>
     <button data-opt="" aria-pressed="{{ sel.tools_nomaterials }}" onClick="{{ act.tools_nomaterials }}" style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;text-align:left;padding:17px 20px;border-radius:24px;border:1px solid var(--edge);background:#fff;cursor:pointer;font-family:var(--font-body);color:var(--ink)">
       <span style="font-family:var(--font-heading);font-weight:700;font-size:18px">Limit what students may upload</span>
@@ -613,15 +613,15 @@ h1:focus-visible,h2:focus-visible{outline:3px solid var(--color-accent);outline-
 <section style="background:var(--color-surface);border-radius:34px;padding:30px 32px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:18px">
   <span style="font-family:var(--font-heading);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent)">Optional</span>
   <h2 style="font-family:var(--font-heading);font-weight:800;font-size:30px;line-height:1.1;margin:0;color:var(--color-accent)">Would you like to address how you may use GenAI in this course?</h2>
-  <p style="margin: 0; font-size: 16px; line-height: 1.6; color: var(--ink-2); max-width: 80ch; text-wrap: pretty">UO guidance encourages instructors to model the transparency they expect from students and respond candidly to questions about their own use of GenAI.</p>
+  <p style="margin: 0; font-size: 16px; line-height: 1.6; color: var(--ink-2); max-width: 80ch; text-wrap: pretty">UO guidance encourages instructors to be transparent about their own use of GenAI, including how it may support course materials, feedback, or assessment. Consider what students should know about your use and how you will communicate it.</p>
   <div role="group" aria-label="Instructor use of GenAI — the first two can both apply" style="display:flex;flex-direction:column;gap:11px">
     <button data-opt="" aria-pressed="{{ sel.fd_a }}" onClick="{{ act.fd_a }}" style="display:flex;flex-direction:column;gap:7px;align-items:flex-start;text-align:left;padding:17px 20px;border-radius:24px;border:1px solid var(--edge);background:#fff;cursor:pointer;font-family:var(--font-body);color:var(--ink)">
       <span style="font-family:var(--font-heading);font-weight:700;font-size:17px">Proactively disclose significant use</span>
-      <span style="font-size:16px;line-height:1.5;color:var(--ink-2)">I will identify when GenAI has substantially contributed to course materials students receive.</span>
+      <span style="font-size:16px;line-height:1.5;color:var(--ink-2)">I will identify when GenAI has substantially contributed to course materials or feedback students receive.</span>
     </button>
     <button data-opt="" aria-pressed="{{ sel.fd_b }}" onClick="{{ act.fd_b }}" style="display:flex;flex-direction:column;gap:7px;align-items:flex-start;text-align:left;padding:17px 20px;border-radius:24px;border:1px solid var(--edge);background:#fff;cursor:pointer;font-family:var(--font-body);color:var(--ink)">
       <span style="font-family:var(--font-heading);font-weight:700;font-size:17px">Invite questions about my use</span>
-      <span style="font-size:16px;line-height:1.5;color:var(--ink-2)">Students may ask whether and how I have used GenAI in developing the course.</span>
+      <span style="font-size:16px;line-height:1.5;color:var(--ink-2)">Students may ask whether and how I have used GenAI in preparing course materials or supporting teaching activities.</span>
     </button>
     <button data-opt="" aria-pressed="{{ sel.fd_no }}" onClick="{{ act.fd_no }}" style="display:flex;flex-direction:column;gap:7px;align-items:flex-start;text-align:left;padding:17px 20px;border-radius:24px;border:1px solid var(--edge);background:#fff;cursor:pointer;font-family:var(--font-body);color:var(--ink);min-height:44px">
       <span style="font-family:var(--font-heading);font-weight:700;font-size:17px">Do not include a faculty-use statement</span>
@@ -667,7 +667,7 @@ h1:focus-visible,h2:focus-visible{outline:3px solid var(--color-accent);outline-
   <div role="radiogroup" aria-label="Which tool will students use" onKeyDown="{{ on.radioKeys }}" style="display:flex;flex-direction:column;gap:11px">
       <button data-opt="" style="text-align:left;background:#fff;border:1px solid var(--edge);border-radius:22px;padding:15px 18px;min-height:44px;cursor:pointer;display:flex;flex-direction:column;gap:4px;font-family:var(--font-body)" role="radio" aria-checked="{{ sel.rt_uo }}" onClick="{{ act.rt_uo }}">
         <span style="font-family:var(--font-heading);font-weight:700;font-size:17px;color:var(--ink)">A tool UO provides</span>
-        <span style="font-size:14.5px;line-height:1.5;color:var(--ink-2)">Copilot for Web with Data Protection, or a platform this program already licenses. No outside account, no cost to students.</span>
+        <span style="font-size:14.5px;line-height:1.5;color:var(--ink-2)">Microsoft Copilot Chat with Enterprise Data Protection, or a platform this program already licenses. No outside account, no cost to students.</span>
       </button>
       <button data-opt="" style="text-align:left;background:#fff;border:1px solid var(--edge);border-radius:22px;padding:15px 18px;min-height:44px;cursor:pointer;display:flex;flex-direction:column;gap:4px;font-family:var(--font-body)" role="radio" aria-checked="{{ sel.rt_external }}" onClick="{{ act.rt_external }}">
         <span style="font-family:var(--font-heading);font-weight:700;font-size:17px;color:var(--ink)">An outside tool, with an alternative available</span>
@@ -713,12 +713,12 @@ h1:focus-visible,h2:focus-visible{outline:3px solid var(--color-accent);outline-
       <button class="btn btn-secondary" onClick="{{ act.docSyl }}" style="border-color:var(--edge);color:var(--ink);font-size:16px;min-height:44px;padding:11px 18px">Download Word (.docx)</button>
     </div>
   </div>
-  <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:22px 26px;border-radius:30px;border:1px solid var(--edge);background:var(--paper)">
+  <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:22px 26px;border-radius:30px;border:1px solid var(--color-accent);background:var(--color-accent)">
     <div style="flex:1 1 280px;display:flex;flex-direction:column;gap:4px">
-      <h3 style="margin:0;font-family:var(--font-heading);font-weight:800;font-size:18px;color:var(--ink)">Next: your full Canvas policy</h3>
-      <span style="font-size:15px;line-height:1.55;color:var(--ink-2);text-wrap:pretty">Everything you built, including the explanations and examples, like sample AI-use logs, that help students apply it. Syllabus language usually works best when it's short, so consider posting this as a Canvas page and linking to it from your summary.</span>
+      <h3 style="margin:0;font-family:var(--font-heading);font-weight:800;font-size:18px;color:#ffffff">Next: your full Canvas policy</h3>
+      <span style="font-size:15px;line-height:1.55;color:#ffffff;text-wrap:pretty">Everything you built, including the explanations and examples, like sample AI-use logs, that help students apply it. Syllabus language usually works best when it's short, so consider posting this as a Canvas page and linking to it from your summary.</span>
     </div>
-    <button class="btn btn-secondary" onClick="{{ act.goCanvas }}" style="border-color:var(--edge);color:var(--ink);font-size:16px;min-height:44px;padding:11px 18px;flex:none">View Canvas version →</button>
+    <button class="btn btn-secondary" onClick="{{ act.goCanvas }}" style="border-color:#ffffff;background:#ffffff;color:var(--ink);font-size:16px;min-height:44px;padding:11px 18px;flex:none">View Canvas version →</button>
   </div>
   </div></div>
   </sc-if>
@@ -978,13 +978,13 @@ const CORE_TEXT={ct:'This policy also reflects the Core Education Method of Inqu
 const CORE_FRAG={ct:'to evaluate evidence and reach your own conclusions',cr:'to connect and transform ideas in original ways',wc:'to develop and express ideas in writing for particular audiences',er:'to examine your choices and their consequences'};
 function semis(a){if(a.length<2)return a[0]||'';return a.slice(0,-1).join('; ')+'; and '+a[a.length-1];}
 const COMPARE=[
- {name:'GenAI use is not allowed',fits:'Completing the work without generative AI is essential to the learning students are expected to demonstrate.',asks:'No additional categories of AI use are needed. You can still provide assignment-specific instructions or exceptions later.'},
- {name:'GenAI use is allowed with specific limitations',fits:'Some uses of generative AI support learning, while other uses could replace important thinking or practice students need to do themselves.',asks:'Which uses are allowed, which are not allowed, and whether AI use requires permission or is required for particular work.'},
- {name:'GenAI use is generally allowed',fits:'Generative AI use does not interfere with the course learning objectives or is part of the academic or professional practice students are learning.',asks:'Whether AI-generated content may be included in submitted work, and what disclosure, citation, or process documentation you expect.'}
+ {name:'GenAI use is not allowed',b1:'not allowed',em:'',b2:'',fits:'Completing the work without generative AI is essential to the learning students are expected to demonstrate.',asks:'No additional categories of AI use are needed. You can still provide assignment-specific instructions or exceptions later.'},
+ {name:'GenAI use is allowed with specific limitations',b1:'allowed with ',em:'specific',b2:' limitations',fits:'Some uses of generative AI support learning, while other uses could replace important thinking or practice students need to do themselves.',asks:'Which uses are allowed, which are not allowed, and whether AI use requires permission or is required for particular work.'},
+ {name:'GenAI use is generally allowed',b1:'',em:'generally',b2:' allowed',fits:'Generative AI use does not interfere with the course learning objectives or is part of the academic or professional practice students are learning.',asks:'Whether AI-generated content may be included in submitted work, and what disclosure, citation, or process documentation you expect.'}
 ];
 const MISCONDUCT='In accordance with UO policy, if I believe you’ve handed in work created whole or in part by GenAI tools, I may submit a report of suspected academic misconduct to the Office of Student Conduct and Community Standards for that office to make a determination of responsibility.';
 const DETECTOR='UO does not provide a central AI-detection tool, and I will not run your work through one. Those tools are unreliable and are known to flag writing by people whose first language is not English, and SCCS does not treat a detector result as proof of anything on its own.';
-const RT_UO='Where an assignment asks you to use a GenAI tool, it will be one UO provides — Copilot for Web with Data Protection, signed in with your UO account, or a platform this program already licenses. You will not need to create an account with an outside vendor or pay for access, and what you put into those tools is not handed to an outside company to train on. If a required tool creates an accessibility barrier for you, tell me or contact the Accessible Education Center and we will find another route.';
+const RT_UO='Where an assignment asks you to use a GenAI tool, it will be one UO provides — Microsoft Copilot Chat with Enterprise Data Protection, signed in with your UO account, or a platform this program already licenses. You will not need to create an account with an outside vendor or pay for access, and what you put into those tools is not handed to an outside company to train on. If a required tool creates an accessibility barrier for you, tell me or contact the Accessible Education Center and we will find another route.';
 const RT_EXT='Where an assignment asks you to use a GenAI tool that UO does not provide, I will tell you in advance what account it requires and what information it collects, and there will be no cost to you. You may use a pseudonym or a limited account wherever the tool allows it, and you do not need to put your own or anyone else’s personal information into it. An equivalent alternative assignment is available if you would rather not use the tool at all, and it will not disadvantage you. If a required tool creates an accessibility barrier for you, tell me or contact the Accessible Education Center and we will find another route.';
 const RT_TBD='Where an assignment asks you to use a GenAI tool, I will name the specific tool in the assignment instructions. At that point I will also tell you what account it needs and what information it collects, there will be no cost to you, and an equivalent alternative will be available if you would rather not use it. If a required tool creates an accessibility barrier for you, tell me or contact the Accessible Education Center and we will find another route.';
 /* Syllabus-summary text. Every string here is either a verbatim sentence from the
@@ -994,7 +994,7 @@ const SYL_LINK='For the complete course policy, examples, and additional guidanc
 const SYL_LIM_REQUIRED='For some tasks and assignments, GenAI use is required; I will provide instructions, including which tools to use and what to hand in.';
 const SYL_LIM_PERMISSION='Beyond those cases, GenAI is available only with my explicit permission for specific tasks.';
 const SYL_SUB_THROUGHOUT='You may include AI-generated content in work you submit unless the instructions for an assignment state otherwise.';
-const SYL_RT_UO='Where an assignment asks you to use a GenAI tool, it will be one UO provides — Copilot for Web with Data Protection, signed in with your UO account, or a platform this program already licenses — at no cost to you. If a required tool creates an accessibility barrier for you, tell me or contact the Accessible Education Center and we will find another route.';
+const SYL_RT_UO='Where an assignment asks you to use a GenAI tool, it will be one UO provides — Microsoft Copilot Chat with Enterprise Data Protection, signed in with your UO account, or a platform this program already licenses — at no cost to you. If a required tool creates an accessibility barrier for you, tell me or contact the Accessible Education Center and we will find another route.';
 const SYL_RT_EXT='Where an assignment asks you to use a GenAI tool that UO does not provide, I will tell you in advance what account it requires and what information it collects, at no cost to you. An equivalent alternative assignment is available if you would rather not use the tool. If a required tool creates an accessibility barrier for you, tell me or contact the Accessible Education Center and we will find another route.';
 const SYL_RT_TBD='Where an assignment asks you to use a GenAI tool, I will name the specific tool in the assignment instructions. There will be no cost to you, and an equivalent alternative will be available if you would rather not use it. If a required tool creates an accessibility barrier for you, tell me or contact the Accessible Education Center and we will find another route.';
 const SYL_DISC_SUB='Include a brief AI-use statement whenever generative AI makes a substantial contribution to your work, such as helping develop ideas, organize an argument, draft or revise content, write code, create images, or conduct analysis. Routine spelling or grammar corrections do not require a statement.';
@@ -1026,7 +1026,7 @@ const SCENARIOS=[
  {id:'doc-blurb',g:1,label:'Citation &#183; course-wide requirement',sub:'Disclosure plus the citation clause.',a:LIM({disclosure:'always',citation:'yes',procdoc:'none'})},
  {id:'doc-log',g:1,label:'Documentation &#183; process log',sub:'Disclosure, citation and the process-log clause with its sample.',a:LIM({disclosure:'substantial',citation:'yes',procdoc:'log',noUseStatement:true})},
  {id:'doc-cite',g:1,label:'Acknowledgment &#183; by assignment',sub:'Citation and documentation deferred to assignment instructions.',a:LIM({disclosure:'none',citation:'assignment',procdoc:'assignment'})},
- {id:'reqtool-uo',g:2,label:'Required tool &#183; UO-supported',sub:'Copilot with Data Protection; no vendor account or cost.',a:LIM({limShape:['required'],disclosure:'always',docFormat:['blurb'],reqTool:'uo',nondis:null})},
+ {id:'reqtool-uo',g:2,label:'Required tool &#183; UO-supported',sub:'Microsoft Copilot Chat with Enterprise Data Protection; no vendor account or cost.',a:LIM({limShape:['required'],disclosure:'always',docFormat:['blurb'],reqTool:'uo',nondis:null})},
  {id:'reqtool-external',g:2,label:'Required tool &#183; external, with alternative',sub:'Discloses what it collects; pseudonym; equivalent alternative.',a:LIM({limShape:['required'],disclosure:'always',docFormat:['blurb'],reqTool:'external',nondis:null})},
  {id:'reqtool-tbd',g:2,label:'Required tool &#183; not yet selected',sub:'Promises the tool and its protections in the instructions.',a:LIM({limShape:['required'],disclosure:'always',docFormat:['blurb'],reqTool:'tbd',nondis:null})},
  {id:'optout',g:2,label:'Student opt-out pathway',sub:'Uneven-access wording; no points ride on tool use.',a:A({stance:'unrestricted',submittedContent:'throughout',disclosure:'none',citation:'yes',procdoc:'none',opening:'a',tools:['protected'],nondis:'b',rationale:['equity'],facdisc:'a',assignment:'no'})},
@@ -1066,7 +1066,7 @@ function logicRef(){
  });
  push('Allowed without prior permission','Add another allowed use (free text)','usesNote','—','Appends your wording to the appropriate-for sentence',PROV.instr,'limited','CL-USES',{allowed:['brainstorm'],denied:[],usesNote:'generating practice scenarios'});
  push('Not allowed','Add another prohibited use (free text)','deniedNote','—','Appends your wording to the not-appropriate-for sentence',PROV.instr,'limited','CL-USES',{allowed:[],denied:['draft'],deniedNote:'completing the field-notes journal'});
- push('Tools','UO-provided tools with data protection','tools=protected','—','Names Copilot for Web with Data Protection',PROV.uo,'tools','CL-TOOLS',{tools:['protected']});
+ push('Tools','UO-provided tools with data protection','tools=protected','—','Names Microsoft Copilot Chat with Enterprise Data Protection',PROV.uo,'tools','CL-TOOLS',{tools:['protected']});
  push('Tools','Keep course materials out of outside tools','tools=nomaterials','—','IP rights plus Student Conduct Code IV.1.g; protects student work and personal information',PROV.uo,'tools','CL-TOOLS',{tools:['nomaterials']});
  push('Tools','My own wording','tools=custom','Reveals the wording field','Appends your sentence to the tools clause',PROV.instr,'tools','CL-TOOLS',{tools:['custom'],toolsNote:'[your wording appears here]'});
  push('Tools','No tool guidance','tools=none|unsure','—','Suppresses the tools clause',PROV.instr,'tools','CL-TOOLS',{tools:['none']});
@@ -1240,10 +1240,11 @@ class Component extends DCLogic{
     const unr=s.stance==='unrestricted'&&(s.disclosure==='always'||s.disclosure==='substantial'||cite||s.procdoc==='log');
     if(!lim&&!unr)return out;
     const df=unr?[].concat(s.procdoc==='log'?['log']:[],cite?['cite']:[]):s.docFormat;
-    out.push('AI use statement: I used [tool name] to [what you used it for]. All other content is my own.');
+    const disc=s.disclosure==='always'||s.disclosure==='substantial';
+    if(disc)out.push('AI use statement: I used [tool name] to [what you used it for]. All other content is my own.');
     if(df.indexOf('log')>=0)out.push('Log entry: [date] — asked [tool] for [your prompt]; kept [what you kept] and rewrote the rest.');
     if(df.indexOf('cite')>=0)out.push('Citation: follow '+s.citeStyle+' guidance for GenAI tools — name the tool, its version, and the date you used it.');
-    out.push('And if you did not use these tools at all: "No GenAI tools were used in this assignment."');
+    if(disc&&s.noUseStatement===true)out.push('And if you did not use these tools at all: "No GenAI tools were used in this assignment."');
     return out;
   }
 
@@ -1285,7 +1286,7 @@ class Component extends DCLogic{
     }
     if(s.tools.length&&s.tools.indexOf('none')<0&&s.tools.indexOf('unsure')<0){
       const bits=[];
-      if(s.tools.indexOf('protected')>=0)bits.push('When using generative AI for this course, use UO’s Copilot for Web with Data Protection while signed in with your UO account, or another platform specifically approved for this course or program. These options provide institutionally managed access and protections that may not apply when you use a personal or publicly available AI account.');
+      if(s.tools.indexOf('protected')>=0)bits.push('When using generative AI for this course, use UO’s Microsoft Copilot Chat with Enterprise Data Protection while signed in with your UO account, or another platform specifically approved for this course or program. These options provide institutionally managed access and protections that may not apply when you use a personal or publicly available AI account.');
       if(s.tools.indexOf('nomaterials')>=0)bits.push('Do not upload course readings, assignment prompts, slides, or other course materials to a generative AI tool without explicit permission. These materials may be protected by intellectual-property rights held by the instructor, another creator, or the university, and uploading them without permission may conflict with those rights or with the Student Conduct Code. Do not upload another student’s work or anyone’s personal or sensitive information to an AI tool.');
       if(s.tools.indexOf('custom')>=0&&s.toolsNote)bits.push(s.toolsNote.trim().replace(/([^.!?])$/,'$1.'));
       add('Tools and materials','tools',bits.join(' '));
@@ -1334,11 +1335,11 @@ class Component extends DCLogic{
       if(s.gutcheck)t+=(t?' ':'')+'A rule of thumb that covers most cases: if AI is helping you polish something you have already made, it is supporting your learning. If it is doing the thinking or the writing for you, it is replacing it.';
       add('Why this policy','rationale',t);
     }
-    const FD_A='I may use generative AI to support the development of course materials. When I do, I remain responsible for reviewing the accuracy, quality, and appropriateness of the result. I will disclose uses that substantially shape the materials you receive.';
-    const FD_B='You are welcome to ask whether and how I have used generative AI in developing this course, and I will answer your questions directly.';
+    const FD_A='I may use generative AI to support the development of course materials or other teaching activities, such as preparing feedback. When I do, I remain responsible for reviewing the accuracy, quality, and appropriateness of the result. I will disclose significant uses that shape the materials or feedback you receive.';
+    const FD_B='You are welcome to ask whether and how I have used generative AI in preparing course materials or supporting teaching activities, and I will answer your questions directly.';
     if(s.facdisc==='a')add('Instructor use of GenAI','facdisc',FD_A);
     if(s.facdisc==='b')add('Instructor use of GenAI','facdisc',FD_B);
-    if(s.facdisc==='both')add('Instructor use of GenAI','facdisc',FD_A+' You are also welcome to ask whether and how I have used generative AI in developing this course, and I will answer your questions directly.');
+    if(s.facdisc==='both')add('Instructor use of GenAI','facdisc',FD_A+' You are also welcome to ask whether and how I have used generative AI in preparing course materials or supporting teaching activities, and I will answer your questions directly.');
     if(s.stance)add('Academic integrity','result',MISCONDUCT+' '+DETECTOR);
     if(s.assignment==='yes'&&(s.assignName||s.assignScope)){
       const name=s.assignName?'the '+s.assignName:'this assignment';
