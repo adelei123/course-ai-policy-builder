@@ -1121,7 +1121,7 @@ class Component extends DCLogic{
   /* ---- helpers ---- */
   esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
   mark(){const p={};if(this.state.edited!==null)p.staleEdit=true;if(this.state.editedSyl!==null)p.staleEditSyl=true;return p;}
-  rev(){return this.props.reviewMode===true||QP.review;}
+  rev(){return false;}
   skey(){if(QP.embedded)return null;return this.rev()?REVIEW_KEY:KEY;}
   needsReqTool(st){const s=st||this.state;return s.limShape.indexOf('required')>=0||s.assignScope==='wider';}
 
