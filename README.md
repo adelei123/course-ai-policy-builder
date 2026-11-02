@@ -6,7 +6,7 @@ A guided tool that helps University of Oregon instructors draft a course Generat
 `index.html` is the tool itself, in readable and editable form. To publish it with GitHub Pages:
 1. Upload this folder to a repository.
 2. Go to **Settings → Pages**, set Source to *Deploy from a branch*, choose `main` and `/ (root)`, then save.
-3. The tool will be live at `https://<username>.github.io/<repo-name>/`.
+3. The tool will be live at `https://adelei123.github.io/course-ai-policy-builder/`.
 
 Any edit you commit to `index.html` goes live within about a minute.
 
